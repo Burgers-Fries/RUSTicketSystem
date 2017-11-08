@@ -10,8 +10,8 @@ table.table.table-striped.table-responsive
       th scope="col" Created
       th scope="col" Updated
   tbody
-    tr
-      - @tickets.each do |ticket|
+    - @tickets.each do |ticket|
+      tr
         th scope="row" = ticket.id
         td = ticket.title
         td ticket.customer.name
