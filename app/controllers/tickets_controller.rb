@@ -7,8 +7,18 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(find(params[:id]))
   end
 
+  def new
+    @ticket = Ticket.new
+  end
+
   def create
     @ticket = Ticket.new(ticket_params)
+
+    if @ticket.save
+      redirect_to @ticket
+    else
+      render 'new'
+    end
   end
 
   private
