@@ -1,1 +1,19 @@
-h1 tickets
+= provide :title, "Tickets"
+
+h1.text-center Tickets
+table.table.table-striped.table-responsive
+  thead.thead-dark
+    tr
+      th scope="col" ID
+      th scope="col" Title
+      th scope="col" Customer
+      th scope="col" Created
+      th scope="col" Updated
+  tbody
+    tr
+      - @tickets.each do |ticket|
+        th scope="row" = ticket.id
+        td = ticket.title
+        td ticket.customer.name
+        td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
+        td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")

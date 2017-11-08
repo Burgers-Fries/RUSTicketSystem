@@ -1,1 +1,11 @@
-h1 Create new ticket
+= provide :title, "New Ticket"
+
+h1.text-center Tickets
+= form_for @ticket do |ticket|
+  = ticket.label :title
+  = ticket.text_field :title
+
+  = ticket.label :body
+  = ticket.text_field :body
+
+  = ticket.submit
