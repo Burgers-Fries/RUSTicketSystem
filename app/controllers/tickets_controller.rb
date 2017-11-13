@@ -4,7 +4,7 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @ticket = Ticket.find(find(params[:id]))
+    @ticket = Ticket.find(params[:id])
   end
 
   def new
