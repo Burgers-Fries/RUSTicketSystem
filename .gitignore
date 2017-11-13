@@ -24,3 +24,6 @@
 
 # Ignore nohup log
 nohup.out
+
+#Ignore login
+/config/application.yml
