@@ -1,11 +1,20 @@
 = provide :title, "New Ticket"
 
+//input placeholder=("Text:") type="text" /
+
+
 h1.text-center Tickets
-= form_for @ticket do |ticket|
-  = ticket.label :title
-  = ticket.text_field :title
-
-  = ticket.label :body
-  = ticket.text_field :body
-
-  = ticket.submit
+.text-left.pt-2
+  = form_for @ticket do |ticket| 
+    
+    = ticket.label :title 
+    br
+    = ticket.text_field :title, placeholder: " Put your title here"
+    br
+    
+    = ticket.label :body
+    br
+    = ticket.text_area :body, placeholder: "Enter your ticket details here"
+    br
+    .text-center
+      = ticket.submit
