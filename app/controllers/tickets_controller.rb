@@ -20,6 +20,12 @@ class TicketsController < ApplicationController
       render 'new'
     end
   end
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+        
+    redirect_to tickets_path
+  end
 
   private
   def ticket_params

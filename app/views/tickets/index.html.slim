@@ -17,3 +17,6 @@ table.table.table-striped.table-responsive
         td ticket.customer.name
         td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
         td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")
+        td = link_to 'Show', ticket_path(ticket)
+
+                              
