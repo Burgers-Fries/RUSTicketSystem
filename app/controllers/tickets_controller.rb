@@ -20,14 +20,22 @@ class TicketsController < ApplicationController
       render 'new'
     end
   end
+  def update
+        @ticket=Ticket.find(params[:id])
+        if @ticket.update(ticket_params)
+            redirect_to @ticket
+        else
+            render 'edit'
+        end
+    end
   def destroy
     @ticket = Ticket.find(params[:id])
-    @ticket.destroy
+    @ticket.delete
         
     redirect_to tickets_path
   end
 
-  private
+private
   def ticket_params
     params.require(:ticket).permit(:title, :body)
   end
