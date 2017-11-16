@@ -6,8 +6,6 @@ p = @ticket.title
 h2 Body
 p = @ticket.body
 
-= link_to 'Destroy', ticket_path(@ticket),
-    method: :delete, 
-    data: { confirm: 'Are you sure?'}
+
 br
 = link_to 'Ticket List', tickets_path 
