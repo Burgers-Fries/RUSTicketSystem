@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   get 'login/index'
 
-  resources :tickets do
-    delete :destroy
-  end
+  resources :tickets
 
   root 'login#index'
 end
