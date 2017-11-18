@@ -18,13 +18,4 @@ table.table.table-striped.table-responsive
         td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
         td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")
         td = link_to 'Show', ticket_path(ticket)
-        td = link_to 'Destroy',
-                                ticket_path(ticket),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' }
-        
-                                
-                                
-    
-
-                              
+        td = link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
