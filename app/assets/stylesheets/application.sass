@@ -9,7 +9,30 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap"
+
+html
+  @extend .h-100
+
+body
+  @extend .h-100
+  background: linear-gradient(to bottom right, red, yellow)
+
+table
+  @extend .table
+  @extend .table-striped
+  @extend .table-responsive
+
+h1
+  @extend .text-center
+
+thead
+  @extend .thead-dark
+
+.login-section
+  @extend .row
+  @extend .justify-content-center
+  @extend .align-items-center
+  @extend .h-75
