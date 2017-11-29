@@ -6,7 +6,15 @@ p = @ticket.title
 h2 Body
 p = @ticket.body
 
-
 br
-= link_to 'Ticket List', tickets_path 
+.btn-group
+  button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+    | Status
+  .dropdown-menu
+    a.dropdown-item href="#"  Open
+    .dropdown-divider
+    a.dropdown-item href="#"  Closed 
+br 
+
+= button_to 'Ticket List', tickets_path 
 = link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' }

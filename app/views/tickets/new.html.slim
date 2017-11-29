@@ -30,4 +30,4 @@ h1.text-center Tickets
         - @ticket.errors.full_messages.each do |msg|
           li= msg
   
-= link_to 'Back', tickets_path
+a.button.btn.btn-danger.navbar-btn href=tickets_path Back
