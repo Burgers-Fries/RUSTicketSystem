@@ -16,4 +16,5 @@ br
     a.dropdown-item href="#"  Closed 
 br 
 
-a.button.btn.btn-danger.navbar-btn href=tickets_path Ticket List
+= button_to 'Ticket List', tickets_path 
+= link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' }
