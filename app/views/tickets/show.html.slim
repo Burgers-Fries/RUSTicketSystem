@@ -9,3 +9,4 @@ p = @ticket.body
 
 br
 = link_to 'Ticket List', tickets_path 
+= link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' }
