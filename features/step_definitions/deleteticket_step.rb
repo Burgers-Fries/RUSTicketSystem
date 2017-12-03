@@ -4,8 +4,8 @@ Given("I am on the ticket index") do
 end
 
 When("I click on a {string} link") do |page_name|
-  click_link page_name
-  click_button('Delete')
+  visit "tickets/1"
+  click_link "Destroy"
 end
 
 Then("I should not see {string}") do |page_name|

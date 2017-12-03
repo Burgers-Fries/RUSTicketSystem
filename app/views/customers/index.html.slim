@@ -18,15 +18,16 @@ table
   thead
     tr
       th scope="col" ID
-      th scope="col" Title
-      th scope="col" Customer
+      th scope="col" name
+      th scope="col" phone
+      th scope="col" email
       th scope="col" Created
       th scope="col" Updated
   tbody
-    - @tickets.each do |ticket|
+    - @customers.each do |customer|
       tr
-        th scope="row" = ticket.id
-        td = link_to ticket.title, ticket_path(ticket)
+        th scope="row" = customer.id
+        td = link_to customer.title, customer_path(customer)
         td ticket.customer.name
         td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
         td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")
