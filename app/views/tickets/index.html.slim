@@ -1,8 +1,26 @@
 = provide :title, "Tickets"
 
-h1.text-center Tickets
-table.table.table-striped.table-responsive
-  thead.thead-dark
+h1 Tickets
+
+a.button.btn.btn-success.navbar-btn href="./tickets/new" Create Ticket
+
+
+.btn-group
+  button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+    | Display
+  .dropdown-menu
+    a.dropdown-item href="#"  Open
+    .dropdown-divider
+    a.dropdown-item href="#"  Closed
+br
+
+- if current_user
+  p Currently signed in as #{current_user.name}
+- else
+  p Not signed in
+
+table
+  thead
     tr
       th scope="col" ID
       th scope="col" Title
@@ -13,7 +31,7 @@ table.table.table-striped.table-responsive
     - @tickets.each do |ticket|
       tr
         th scope="row" = ticket.id
-        td = ticket.title
+        td = link_to ticket.title, ticket_path(ticket)
         td ticket.customer.name
         td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
         td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")

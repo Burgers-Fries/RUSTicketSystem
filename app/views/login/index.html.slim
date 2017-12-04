@@ -1,7 +1,7 @@
 = provide :title, "Login"
 
-h1.text-center RUS Ticket System
-.row.justify-content-center.align-items-center.h-75
+h1 RUS Ticket System
+.login-section
   .col-3
     form
       .form-group
@@ -11,4 +11,4 @@ h1.text-center RUS Ticket System
         label for="secret" Password
         input type="password" class="form-control" id="secret" placeholder="correct horse battery staple"
       button type="submit" class="btn btn-primary" style="width:100%;font-family:monospaced,monospace" enter
-
+      = link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in"
