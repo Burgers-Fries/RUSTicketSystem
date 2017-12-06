@@ -1,20 +1,26 @@
 h1.text-center Ticket ##{@ticket.id}
 
-h2 Title
-p = @ticket.title
+= link_to 'Ticket List', tickets_path
 
-h2 Body
-p = @ticket.body
+h2 = @ticket.title
+
+#body
+  h4 Ticket description:
+  p = link_to "edit ticket", edit_ticket_path(@ticket)
+  p = @ticket.body
+  br
+  h4 Customer information:
+  p = link_to "edit customer"
 
 br
 .btn-group
-  button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+  button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
     | Status
   .dropdown-menu
     a.dropdown-item href="#"  Open
     .dropdown-divider
-    a.dropdown-item href="#"  Closed 
-br 
+    a.dropdown-item href="#"  Closed
+br
 
-= link_to 'Ticket List', tickets_path 
+
 = link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' }
