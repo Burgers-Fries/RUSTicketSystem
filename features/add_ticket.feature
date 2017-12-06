@@ -7,5 +7,5 @@ Scenario: You need to be able to add tickets
   When I click on the "New Ticket" link
   Then I should be on the "New Ticket" page
   And I should see the "Title" field
-  And I should see the "body" field
+  And I should see the "Body" field
   
