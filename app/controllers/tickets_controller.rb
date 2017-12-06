@@ -5,6 +5,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    RusMailer.ticket_email("lukeafrazier@gmail.com", @ticket).deliver
   end
 
   def new
