@@ -1,7 +1,6 @@
 = provide :title, "New Ticket"
-
-
-
+#header
+  a.float-left.text-left.button.btn.btn-danger.navbar-btn href=tickets_path Back
 h1.text-center Tickets
 .text-left.pt-2
   = form_for @ticket do |ticket| 
@@ -13,9 +12,11 @@ h1.text-center Tickets
     
     = ticket.label :body
     br
+    
     = ticket.text_area :body, placeholder: "Enter your ticket details here"
     br
-    .text-center
+    br
+    .text-left
       = ticket.submit
   
 
@@ -30,4 +31,3 @@ h1.text-center Tickets
         - @ticket.errors.full_messages.each do |msg|
           li= msg
   
-a.button.btn.btn-danger.navbar-btn href=tickets_path Back
