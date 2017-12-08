@@ -12,7 +12,7 @@ When("I click on a {string} link") do |page_name|
   visit "tickets/1"
 end
 
-Then(/^I will be on the "([^"]*)" page$/) do |page_name|
+Then(/^I will be on the specific "([^"]*)" page$/) do |page_name|
   expect(page).to have_content("Title")
 end
 
