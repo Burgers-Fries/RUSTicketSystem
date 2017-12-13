@@ -1,15 +1,17 @@
 = provide :title, "Tickets"
 
+- if current_user
+  p Currently signed in as #{current_user.name}
+- else
+  p Not signed in
+
 p id="logo" Tickets
 nav
   ul
     li
       = link_to "Create Ticket", new_ticket_path
     li
-      a href="../products/" Products
-    li
-      a href="../contact/" Contact
-
+      = link_to "Customers", customers_path
 
 .btn-group
   button.btn.btn-warning.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
@@ -18,12 +20,8 @@ nav
     a.dropdown-item href="#"  Open
     .dropdown-divider
     a.dropdown-item href="#"  Closed
-br
 
-- if current_user
-  p Currently signed in as #{current_user.name}
-- else
-  p Not signed in
+br
 
 table
   thead
@@ -38,6 +36,6 @@ table
       tr
         th scope="row" = ticket.id
         td = link_to ticket.title, ticket_path(ticket)
-        td ticket.customer.name
+        td = ticket.customer_name if ticket.customer_name
         td = ticket.created_at.strftime("%a, %b #{ticket.created_at.day.ordinalize} %l:%M %p")
         td = ticket.updated_at.strftime("%a, %b #{ticket.updated_at.day.ordinalize} %l:%M %p")

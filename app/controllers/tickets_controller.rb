@@ -10,6 +10,7 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @customers = Customer.all
   end
 
   def create
@@ -40,6 +41,6 @@ class TicketsController < ApplicationController
 
   private
   def ticket_params
-    params.require(:ticket).permit(:title, :body)
+    params.require(:ticket).permit(:title, :body, :customer_name)
   end
 end

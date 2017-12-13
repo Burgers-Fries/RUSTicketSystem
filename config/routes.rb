@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'login/index'
 
   resources :tickets
+  resources :customers
 
   root 'login#index'
 end

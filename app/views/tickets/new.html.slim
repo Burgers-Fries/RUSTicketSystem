@@ -4,31 +4,32 @@
   a.float-left.text-left.button.btn.btn-danger.navbar-btn href=tickets_path Back
 h1.text-center Tickets
 .text-left.pt-2
-  = form_for @ticket do |ticket| 
-    
-    = ticket.label :title 
+  = form_for @ticket do |ticket|
+
+    = ticket.select 'customer', options_from_collection_for_select(@customers, 'id', 'name')
+
+    = ticket.label :title
     br
     = ticket.text_field :title, placeholder: " Put your title here"
     br
-    
+
     = ticket.label :body
     br
-    
+
     = ticket.text_area :body, placeholder: "Enter your ticket details here"
     br
     br
     .text-left
       = ticket.submit
-  
 
-    
+
+
   - if @ticket.errors.any?
     #error_explanation
       h2
         = pluralize(@ticket.errors.count, "error")
-         | prohibited 
+         | prohibited
           | this ticket from being saved:
       ul
         - @ticket.errors.full_messages.each do |msg|
           li= msg
-  
