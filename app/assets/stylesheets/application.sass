@@ -12,6 +12,7 @@
  */
 
 @import "bootstrap"
+@import url('https://fonts.googleapis.com/css?family=Lobster')
 
 html
   @extend .h-100
@@ -20,7 +21,7 @@ body
   @extend .h-100
   background: linear-gradient(to bottom right, red, yellow)
 
-table
+//table
   @extend .table
   @extend .table-striped
   @extend .table-responsive
@@ -28,8 +29,24 @@ table
 h1
   @extend .text-center
 
-thead
+//thead
   @extend .thead-dark
+
+table
+  width: 100%
+  max-width: 100%
+  margin-bottom: 1rem
+
+th
+  padding: .75rem
+  vertical-align: center
+  font-weight: bold
+
+thead
+  background: lightgray
+
+tr:nth-child(odd)
+  background-color: #f2f2f2
 
 .login-section
   @extend .row
@@ -39,3 +56,31 @@ thead
 
 #body
   background: rgba(255, 255, 255, .8)
+
+#logo
+  text-align: center
+  font-size: 100px
+  font-family: 'Lobster', cursive
+  margin: 0
+
+nav ul
+  text-align: center
+
+nav li
+  list-style: none
+  display: inline-block
+
+
+li a
+  color: royalblue
+  display: block
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 25px
+  margin: 0
+  padding: 9px 18px 9px
+  text-decoration: none
+
+li a:hover
+  background-color: royalvblue
+  color: white

@@ -1,8 +1,14 @@
 = provide :title, "Tickets"
 
-h1 Tickets
-
-= link_to "Create Ticket", new_ticket_path
+p id="logo" Tickets
+nav
+  ul
+    li
+      = link_to "Create Ticket", new_ticket_path
+    li
+      a href="../products/" Products
+    li
+      a href="../contact/" Contact
 
 
 .btn-group
