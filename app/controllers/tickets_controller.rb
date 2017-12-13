@@ -8,6 +8,10 @@ class TicketsController < ApplicationController
     RusMailer.ticket_email("lukeafrazier@gmail.com", @ticket).deliver
   end
 
+  def edit
+    @ticket = Ticket.find(params[:id])
+  end
+
   def new
     @ticket = Ticket.new
     @customers = Customer.all
