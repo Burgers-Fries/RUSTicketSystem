@@ -4,13 +4,10 @@ h1.text-center Ticket ##{@ticket.id}
 
 h2 = @ticket.title
 
-#body
+#body style="padding: 4px;"
   h4 Ticket description:
   p = link_to "edit ticket", edit_ticket_path(@ticket)
   p = @ticket.body
-  br
-  h4 Customer information:
-  p = link_to "edit customer"
 
 br
 .btn-group

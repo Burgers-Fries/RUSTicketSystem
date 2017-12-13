@@ -7,7 +7,7 @@ h1.text-center Tickets
   = form_for @ticket do |ticket|
 
     = ticket.select 'customer', options_from_collection_for_select(@customers, 'id', 'name')
-
+    br
     = ticket.label :title
     br
     = ticket.text_field :title, placeholder: " Put your title here"
