@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The RUS Ticket System is designed to make technician's lives easier. Inspired by the complexity and frustration our team of UNC Charlotte technicians experience with our current ticketing system, RUS offers a fast and user-friendly experience. Created using Ruby on Rails, Slim, and SASS for a semester-long class project.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## AWARDS
+3rd Place - UNC Charlotte Fall 2017 Software Engineering
